@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Consulta de CNPJ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-itens-center">
+            <div class="col-md-5">
+                <!--Formulário de consulta de cnpj-->
+                <form id="formCliente" method="post" class="shadow-lg p-3">
+                    <h4 class="text-primary">🔎 Consulta de Empresa por CNPJ</h4>
+                    <div class="mb-3">
+                        <label for="cnpj" class="form-label">CNPJ</label>
+                        <input type="text" class="form-control" id="cnpj" name="cnpj"
+                        placeholder="Ex: 05437537000137" pattern="[0-9]{14}"
+                        maxlength="14" onchange="atualizaForm()" 
+                        title="Informe o CNPJ no formato 99999999999999 para buscar as informações da empresa">
+                        <div class="spinner-border d-none" id="spinner">
+                        </div>    
+                    </div>
+                    <div class="mb-3">
+                        <label for="razao_social" class="form-label">Razão Social</label>
+                        <input type="text" class="form-control" id="razao_social" name="razao_social" readonly/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nome_fantasia" class="form-label">Nome Fantasia</label>
+                        <input type="text" class="form-control" id="nome_fantasia" name="nome_fantasia" readonly/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cnae_fiscal_descricao" class="form-label">Atividade</label>
+                        <input type="text" class="form-control" id="cnae_fiscal_descricao" name="cnae_fiscal_descricao" readonly/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="municipio" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="municipio" name="municipio" readonly>
+                    </div>
+                    <!--Código Municipio e UF-->
+                    <div class="mb-3 row">
+                        <div class="col-md-6">
+                            <label for="uf" class="form-label">UF</label>
+                            <input type="text" class="form-control" id="uf" name="uf" readonly>
+                        </div>
+                    </div>
+                    <!--Botão-->
+                    <div class="my-3">
+                        <button class="btn btn-info" id="buscar" type="button" onclick="buscarCNPJ()">
+                            <i class="bi bi-search"></i> Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Carregando o script-->
+<script src="js/script.js"></script>
+</body>
+
+</html>
