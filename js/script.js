@@ -79,4 +79,23 @@ document.getElementById("cnpj").addEventListener("input", function (event) {
     event.target.value = inputValue;
 });
 
-        
+
+document.addEventListener('click', limpar);
+
+function limpar(e) {
+    // Limpando o formulário 
+    if (e.target.id === 'limpar') {
+        // Chamando a funcao limparFormulario
+        limparFormulario();
+    }
+}
+
+function limparFormulario() {
+    // Limpando os campos
+    document.getElementById('cnpj').value = "";
+    document.getElementById('razao_social').value = "";
+    document.getElementById('nome_fantasia').value = "";
+    document.getElementById('cnae_fiscal_descricao').value = "";
+    document.getElementById('municipio').value = "";
+    document.getElementById('uf').value = "";
+}
