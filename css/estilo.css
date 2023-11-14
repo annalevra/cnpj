@@ -1,5 +1,5 @@
-
-
-formCliente{
-    background-color: rgb(244, 244, 244);
+body{
+    background-image: url('../img/fundoazul.jpg');
+    background-repeat: no-repeat; /* evita a repetição da imagem */
+    background-size: cover; /* para cobrir toda a area visivel */
 }

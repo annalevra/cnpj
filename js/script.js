@@ -19,6 +19,7 @@ function getCNPJ(cnpj, callback){
     })
     .catch(error => {
         callback(error, null)
+        
     })
 }
 
@@ -35,13 +36,13 @@ function buscarCNPJ() {
     const municipio = document.getElementById('municipio');
     const uf = document.getElementById('uf');
 
-    
+    const modalMsg = new bootstrap.Modal(document.getElementById('modalMsg'))
     
     // Obtendo o valor digitado no CNPJ
     const cnpjValor = cnpj.value;
-    // aviso de erro caso o usuário não insira 14 dígitos
+    // Aviso de erro caso o usuário não insira 14 dígitos
     if (cnpjValor.length != 14){
-        alert("Digite um CNPJ válido!");
+        modalMsg.show();
     }
     // Verifica se o CNPJ tem 14 dígitos
     if (cnpjValor.length === 14) {
@@ -55,7 +56,7 @@ function buscarCNPJ() {
 
             if (erro) {
                 // Tem algum erro?
-                alert(erro);
+                modalMsg.show()
             } else {
                 razao_social.value = `${dados.razao_social}`;
                 nome_fantasia.value = `${dados.nome_fantasia}`;
