@@ -41,7 +41,7 @@ function buscarCNPJ() {
     const cnpjValor = cnpj.value;
     // aviso de erro caso o usuário não insira 14 dígitos
     if (cnpjValor.length != 14){
-        alert("O CNPJ deve ter 14 dígitos");
+        alert("Digite um CNPJ válido!");
     }
     // Verifica se o CNPJ tem 14 dígitos
     if (cnpjValor.length === 14) {
@@ -77,3 +77,5 @@ document.getElementById("cnpj").addEventListener("input", function (event) {
     // Atualiza o valor do campo
     event.target.value = inputValue;
 });
+
+    

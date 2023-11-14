@@ -23,49 +23,63 @@
             <div class="col-md-5">
                 <!--Formulário de consulta de cnpj-->
                 <form id="formCliente" method="post" class="shadow-lg p-3">
-                    <h4 class="text-primary">🔎 Consulta de Empresa por CNPJ</h4>
-                    <div class="mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                    <h4 class="text-primary fw-bold text-center">Consulta de Empresa por CNPJ 🔎</h4>
+                    <!--Inserindo uma imagem-->
+                    <div class="d-flex justify-content-center">
+                    <img src="img/empresa.jpg" style="width:100%"/>
+                    </div>
+                    <!--Campo onde o cnpj será inserido pelo usuário para buscar a empresa-->
+                    <div class="my-3 text-primary fw-bold">
                         <label for="cnpj" class="form-label">CNPJ</label>
                         <input type="text" class="form-control" id="cnpj" name="cnpj"
                         placeholder="Ex: 05437537000137" pattern="[0-9]{14}"
-                        maxlength="14" onchange="atualizaForm()" 
+                        maxlength="14"  
                         title="Informe o CNPJ no formato 99999999999999 para buscar as informações da empresa">
                         <div class="spinner-border d-none" id="spinner">
                         </div>    
+                    <!--Botão de Busca de CNPJ -->
+                    <div class="my-3 text-end fw-bold" >
+                        <button class="btn btn-info" id="buscar" type="button" onclick="buscarCNPJ()">
+                            <i class="bi bi-search"></i> Buscar
+                        </button>
                     </div>
-                    <div class="mb-3">
+                    </div>
+                    <div class="mb-3 text-primary fw-bold">
                         <label for="razao_social" class="form-label">Razão Social</label>
                         <input type="text" class="form-control" id="razao_social" name="razao_social" readonly/>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-primary fw-bold">
                         <label for="nome_fantasia" class="form-label">Nome Fantasia</label>
                         <input type="text" class="form-control" id="nome_fantasia" name="nome_fantasia" readonly/>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-primary fw-bold fw-bold">
                         <label for="cnae_fiscal_descricao" class="form-label">Atividade</label>
                         <input type="text" class="form-control" id="cnae_fiscal_descricao" name="cnae_fiscal_descricao" readonly/>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-primary fw-bold">
                         <label for="municipio" class="form-label">Cidade</label>
                         <input type="text" class="form-control" id="municipio" name="municipio" readonly>
                     </div>
-                    <!--Código Municipio e UF-->
-                    <div class="mb-3 row">
+                    <div class="mb-3 row text-primary fw-bold">
                         <div class="col-md-6">
                             <label for="uf" class="form-label">UF</label>
                             <input type="text" class="form-control" id="uf" name="uf" readonly>
                         </div>
                     </div>
-                    <!--Botão-->
-                    <div class="my-3">
-                        <button class="btn btn-info" id="buscar" type="button" onclick="buscarCNPJ()">
-                            <i class="bi bi-search"></i> Buscar
+                    <!--Botão para limpar conteúdo -->
+                    <div class="my-3 text-end fw-bold">
+                        <button class="btn btn-secondary" id="limpar" type="button" onclick="limpar()">
+                            <i class="bi bi-eraser"></i> Limpar
                         </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
+</div>
 <!-- Carregando o script-->
 <script src="js/script.js"></script>
 </body>
