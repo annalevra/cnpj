@@ -79,4 +79,4 @@ document.getElementById("cnpj").addEventListener("input", function (event) {
     event.target.value = inputValue;
 });
 
-    
+        
